@@ -37,10 +37,11 @@ app.controller('navController', function($scope, userLoggedInService){
     
     $scope.messageObject = {}; 
     $scope.createMessageDataObject = function(){
-      $scope.messageObject.name = $scope.name; 
+      // $scope.messageObject.name = $scope.name; 
+      $scope.messageObject.name = $scope.thisUser; 
       $scope.messageObject.message = $scope.message;
     }
-    
+
 
      
     // $scope.printMessageSendData = function(){
