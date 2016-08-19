@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="socketDemo">
+  <head>
+    <meta charset="utf-8">
+    <title>Socket Test</title>
+    <base href="/" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  </head>
+  <body >
+    <div class="container" ng-controller='navController'>
+      <div ng-show='showLoggedIn'> 
+        <h2>{{thisUser}}</h2>
+        <button ng-click='signOut()'>Sign out</button>
+      </div>
+      <div ng-show='showSignIn'>
+        <input ng-model='signInName'/>
+        <br>
+        <button ng-click='signIn()'>Sign in</button>
+      </div>
+      <br>
+      <p class="well">
+        <a href="/#/">Home</a>
+        |
+        <a href="/#/shows/glee">Glee</a>
+        |
+        <a href="/#/shows/scandal">Scandal</a>
+      </p>
+      <ng-view></ng-view>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/app.js"></script>
+    <script src="/javascripts/services.js"></script>
+  </body>
+</html>

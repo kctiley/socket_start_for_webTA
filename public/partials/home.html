@@ -1,0 +1,22 @@
+<h1>Home</h1>
+<input ng-model='name'/>name
+<input ng-model='message'/>message
+<h4 ng-click='addName()'>add</h4>
+<h4 ng-click='printMessageSendData()'>print message data</h4>
+
+
+<p>
+  <button class="btn btn-primary" ng-click="self()">socket.emit</button>
+</p>
+
+<p>
+  <button class="btn btn-primary" ng-click="all()">io.sockets.emit</button>
+</p>
+
+<p>
+  <button class="btn btn-primary" ng-click="broadcast()">socket.broadcast.emit</button>
+</p>
+
+<div ng-repeat="message in messages track by $index">
+  {{message}}
+</div>
